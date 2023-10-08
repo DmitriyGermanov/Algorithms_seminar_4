@@ -20,8 +20,18 @@ public class Program {
         addResult = hashMap.put("+7900111223307", "EEEEEEE6");
         addResult = hashMap.put("+7900111223308", "EEEEEEE7");
         addResult = hashMap.put("+7900111223309", "EEEEEEE8");
+        addResult = hashMap.put("+7900111223310", "EEEEEEE11");
+        addResult = hashMap.put("+7900111223311", "EEEEEEE12");
+        addResult = hashMap.put("+7900111223312", "EEEEEEE115");
 
         String searchResult = hashMap.get("+7900111223307");
+        System.out.println(hashMap);
+
+
+// Часть написал, но не получилось пройти в глубину, так как не смог сделать переменную клаcа Node
+// Постоянно получал ошибку, что [{
+//	"message": "No enclosing instance of type HashMap<K,V>.Bucket<K,V> is accessible. Must qualify the allocation with an enclosing instance of type HashMap<K,V>.Bucket<K,V> (e.g. x.new A() where x is an instance of HashMap<K,V>.Bucket<K,V>).",
+// Не проходил до этого ООП, к сожалению...
 
         for (HashMap.Entity entuty : hashMap) {
             System.out.printf("%s - %s\n", entuty.key, entuty.value);

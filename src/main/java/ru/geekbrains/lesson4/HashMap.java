@@ -28,13 +28,11 @@ public class HashMap<K, V> implements Iterable<HashMap.Entity> {
             count++;
             while (buckets[count] == null && count < (buckets.length - 1))
                 count++;
-
             return buckets[count] != null;
         }
 
         @Override
         public Entity next() {
-
             return buckets[count].head.value;
         }
     }
@@ -46,7 +44,21 @@ public class HashMap<K, V> implements Iterable<HashMap.Entity> {
      */
     @Override
     public String toString() {
-        return super.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < buckets.length; i++) {
+            if (buckets[i] != null) {
+                Node node = buckets[i].head;
+                while (node != null) {
+                    stringBuilder.append(node.value.key);
+                    stringBuilder.append(" - ");
+                    stringBuilder.append(node.value.value);
+                    node = node.next;
+                    stringBuilder.append("\n");
+                }
+
+            }
+        }
+        return stringBuilder.toString();
     }
 
     // region Публичные методы
